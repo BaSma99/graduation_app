@@ -3,28 +3,9 @@ import 'package:graduation_app/components/SizeConfig.dart';
 import 'package:graduation_app/screens/signUp2.dart';
 import 'package:graduation_app/screens/logIn.dart';
 
-class MyApp extends StatelessWidget {
-  static const routeName = "/signup";
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return OrientationBuilder(
-          builder: (context, orientation) {
-            SizeConfig().init(constraints, orientation);
-            return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              title: 'SignUp',
-              home: SignUp(),
-            );
-          },
-        );
-      },
-    );
-  }
-}
-
 class SignUp extends StatefulWidget {
+  static const routeName = "/signUp";
+
   SignUp({Key key, this.title}) : super(key: key);
 
   final String title;
@@ -51,15 +32,15 @@ class _SignUpState extends State<SignUp> {
               SizedBox(
                 height: 15 * SizeConfig.heightMultiplier,
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(25.0),
-                child: Image.asset(
-                  "assets/images/creatingprofile.png",
-                  fit: BoxFit.cover,
-                  height: 150.0,
-                  width: 150.0,
-                ),
-              ),
+              // ClipRRect(
+              //   borderRadius: BorderRadius.circular(25.0),
+              //   child: Image.asset(
+              //     "assets/images/creatingprofile.png",
+              //     fit: BoxFit.cover,
+              //     height: 150.0,
+              //     width: 150.0,
+              //   ),
+              // ),
               SizedBox(
                 height: 5 * SizeConfig.heightMultiplier,
               ),
@@ -73,24 +54,24 @@ class _SignUpState extends State<SignUp> {
               SizedBox(
                 height: 3 * SizeConfig.heightMultiplier,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 50.0, right: 50.0),
-                child: Text(
-                  "Sign up by using email address and a password for the app",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.blueGrey,
-                      fontSize: 2 * SizeConfig.textMultiplier),
-                ),
-              ),
-              SizedBox(
-                height: 3 * SizeConfig.heightMultiplier,
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.only(left: 50.0, right: 50.0),
+              //   child: Text(
+              //     "Sign up by using email address and a password for the app",
+              //     textAlign: TextAlign.center,
+              //     style: TextStyle(
+              //         color: Colors.blueGrey,
+              //         fontSize: 2 * SizeConfig.textMultiplier),
+              //   ),
+              // ),
+              // SizedBox(
+              //   height: 3 * SizeConfig.heightMultiplier,
+              // ),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: TextFormField(
                   decoration: new InputDecoration(
-                      labelText: "First Name",
+                      labelText: "firstName",
                       fillColor: Colors.white,
                       border: new OutlineInputBorder(
                           borderRadius: new BorderRadius.circular(15.0),
@@ -112,7 +93,7 @@ class _SignUpState extends State<SignUp> {
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: TextFormField(
                   decoration: new InputDecoration(
-                      labelText: "Second Name",
+                      labelText: "lastName",
                       fillColor: Colors.white,
                       border: new OutlineInputBorder(
                           borderRadius: new BorderRadius.circular(15.0),
@@ -134,7 +115,7 @@ class _SignUpState extends State<SignUp> {
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: TextFormField(
                   decoration: new InputDecoration(
-                      labelText: "E-mail address..",
+                      labelText: "email",
                       fillColor: Colors.white,
                       border: new OutlineInputBorder(
                           borderRadius: new BorderRadius.circular(15.0),
@@ -157,7 +138,30 @@ class _SignUpState extends State<SignUp> {
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: TextFormField(
                   decoration: new InputDecoration(
-                      labelText: "Password..",
+                      labelText: "password",
+                      fillColor: Colors.white,
+                      border: new OutlineInputBorder(
+                          borderRadius: new BorderRadius.circular(15.0),
+                          borderSide: new BorderSide(color: Colors.blueGrey))),
+                  validator: (val) {
+                    if (val.length == 0) {
+                      return "Password cannot be empty";
+                    } else {
+                      return null;
+                    }
+                  },
+                  keyboardType: TextInputType.visiblePassword,
+                  style: new TextStyle(color: Colors.blueGrey),
+                ),
+              ),
+              SizedBox(
+                height: 5 * SizeConfig.heightMultiplier,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                child: TextFormField(
+                  decoration: new InputDecoration(
+                      labelText: "confirmPassword",
                       fillColor: Colors.white,
                       border: new OutlineInputBorder(
                           borderRadius: new BorderRadius.circular(15.0),

@@ -6,6 +6,8 @@ import 'package:graduation_app/screens/saved.dart';
 import 'package:graduation_app/components/courses.dart';
 
 class HomePageScreen extends StatefulWidget {
+  static const routeName = "/HomePageScreen";
+
   @override
   _HomePageScreenState createState() => _HomePageScreenState();
 }
@@ -64,13 +66,13 @@ class _HomePageScreenState extends State<HomePageScreen> {
         children: <Widget>[
           imageSlider,
           Center(
-            child: new Padding(
+            child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text('Explore New Career Opportunities'),
             ),
           ),
           Container(
-            height: 390.0,
+            height: 320.0,
             child: Training(),
           ),
         ],

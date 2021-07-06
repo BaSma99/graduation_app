@@ -7,47 +7,27 @@ import 'package:graduation_app/screens/apply.dart';
 class TrainingDetails extends StatefulWidget {
   static const String routeName = '/trainingDetails';
 
-  final trainingName;
-  final companyPicture;
+  final courseName;
+  final courseLocation;
   final companyName;
-  final trainingState;
-  final trainingLocation;
-  final trainingAbout;
-  final trainingRequirement;
-  final salary;
+  final skillsNeeded;
+  final coursePeriod;
   final vacancies;
+  final requirements;
+  final availableFor;
+  final about;
 
   TrainingDetails(
-      this.trainingName,
-      this.companyPicture,
+      this.courseName,
+      this.courseLocation,
       this.companyName,
-      this.trainingState,
-      this.trainingLocation,
-      this.trainingAbout,
-      this.trainingRequirement,
-      this.salary,
-      this.vacancies);
+      this.skillsNeeded,
+      this.coursePeriod,
+      this.vacancies,
+      this.requirements,
+      this.availableFor,
+      this.about);
 
-  // final detailedTrainingName;
-  // final detailedCompanyName;
-  // final detailedCompanyPicture;
-  // final detailedTrainingState;
-  // final detailedTrainingLocation;
-  // final detailedTraningAbout;
-  // final detailedTrainingRequirement;
-  // final detailedSalary;
-  // final detailedVacancies;
-  // TrainingDetails({
-  //   this.detailedTrainingName,
-  //   this.detailedCompanyPicture,
-  //   this.detailedCompanyName,
-  //   this.detailedTrainingState,
-  //   this.detailedTrainingLocation,
-  //   this.detailedTraningAbout,
-  //   this.detailedTrainingRequirement,
-  //   this.detailedSalary,
-  //   this.detailedVacancies,
-  // });
   @override
   _TrainingDetailsState createState() => _TrainingDetailsState();
 }
@@ -86,42 +66,33 @@ class _TrainingDetailsState extends State<TrainingDetails> {
       body: new ListView(
         children: <Widget>[
           new Container(
-            height: 300.0,
-            child: GridTile(
-              child: Container(
-                color: Colors.white,
-                child: Image.asset(widget.companyPicture),
+            color: Colors.white70,
+            child: ListTile(
+              leading: new Text(
+                widget.courseName,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16.0,
+                ),
               ),
-              footer: new Container(
-                color: Colors.white70,
-                child: ListTile(
-                  leading: new Text(
-                    widget.trainingName,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.0,
+              title: new Row(
+                children: <Widget>[
+                  Expanded(
+                    child: new Text(widget.courseLocation,
+                        style: TextStyle(
+                          color: Colors.grey,
+                        )),
+                  ),
+                  Expanded(
+                    child: new Text(
+                      widget.companyName,
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  title: new Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: new Text(widget.trainingLocation,
-                            style: TextStyle(
-                              color: Colors.grey,
-                            )),
-                      ),
-                      Expanded(
-                        child: new Text(
-                          widget.trainingState,
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                ],
               ),
             ),
           ),
@@ -131,14 +102,14 @@ class _TrainingDetailsState extends State<TrainingDetails> {
           ),
           ListTile(
             title: Text(
-              "Company Name",
+              "Skills Needed",
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 18),
             ),
             subtitle: new Text(
-              widget.companyName,
+              widget.skillsNeeded,
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 16,
@@ -157,7 +128,7 @@ class _TrainingDetailsState extends State<TrainingDetails> {
                   fontSize: 18),
             ),
             subtitle: new Text(
-              widget.trainingRequirement,
+              widget.requirements,
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 16,
@@ -176,26 +147,7 @@ class _TrainingDetailsState extends State<TrainingDetails> {
                   fontSize: 18),
             ),
             subtitle: new Text(
-              widget.trainingAbout,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 16,
-              ),
-            ),
-          ),
-          Divider(
-            color: Colors.blue,
-          ),
-          ListTile(
-            title: new Text(
-              "Salary",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18),
-            ),
-            subtitle: new Text(
-              widget.salary,
+              widget.about,
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 16,
@@ -215,6 +167,44 @@ class _TrainingDetailsState extends State<TrainingDetails> {
             ),
             subtitle: new Text(
               widget.vacancies,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+              ),
+            ),
+          ),
+          Divider(
+            color: Colors.blue,
+          ),
+          ListTile(
+            title: new Text(
+              "Available For",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18),
+            ),
+            subtitle: new Text(
+              widget.availableFor,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+              ),
+            ),
+          ),
+          Divider(
+            color: Colors.blue,
+          ),
+          ListTile(
+            title: new Text(
+              "Course Period",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18),
+            ),
+            subtitle: new Text(
+              widget.coursePeriod,
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 16,

@@ -30,15 +30,15 @@ class _SignUpState extends State<SignUp2> {
               SizedBox(
                 height: 15 * SizeConfig.heightMultiplier,
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(25.0),
-                child: Image.asset(
-                  "assets/images/creatingprofile.png",
-                  fit: BoxFit.cover,
-                  height: 150.0,
-                  width: 150.0,
-                ),
-              ),
+              // ClipRRect(
+              //   borderRadius: BorderRadius.circular(25.0),
+              //   child: Image.asset(
+              //     "assets/images/creatingprofile.png",
+              //     fit: BoxFit.cover,
+              //     height: 150.0,
+              //     width: 150.0,
+              //   ),
+              // ),
               SizedBox(
                 height: 5 * SizeConfig.heightMultiplier,
               ),
@@ -56,7 +56,7 @@ class _SignUpState extends State<SignUp2> {
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: TextFormField(
                   decoration: new InputDecoration(
-                      labelText: "Birt Date",
+                      labelText: "birtDate",
                       fillColor: Colors.white,
                       border: new OutlineInputBorder(
                           borderRadius: new BorderRadius.circular(15.0),
@@ -78,7 +78,7 @@ class _SignUpState extends State<SignUp2> {
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: TextFormField(
                   decoration: new InputDecoration(
-                      labelText: "Field",
+                      labelText: "field",
                       fillColor: Colors.white,
                       border: new OutlineInputBorder(
                           borderRadius: new BorderRadius.circular(15.0),
@@ -93,12 +93,49 @@ class _SignUpState extends State<SignUp2> {
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: TextFormField(
                   decoration: new InputDecoration(
-                      labelText: "City",
+                      labelText: "city",
                       fillColor: Colors.white,
                       border: new OutlineInputBorder(
                           borderRadius: new BorderRadius.circular(15.0),
                           borderSide: new BorderSide(color: Colors.blueGrey))),
                   style: new TextStyle(color: Colors.blueGrey),
+                ),
+              ),
+              SizedBox(
+                height: 5 * SizeConfig.heightMultiplier,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                child: TextFormField(
+                  decoration: new InputDecoration(
+                      labelText: "skills",
+                      fillColor: Colors.white,
+                      border: new OutlineInputBorder(
+                          borderRadius: new BorderRadius.circular(15.0),
+                          borderSide: new BorderSide(color: Colors.blueGrey))),
+                  validator: (val) {
+                    if (val.length == 0) {
+                      return "Skills cannot be empty";
+                    } else {
+                      return null;
+                    }
+                  },
+                  style: new TextStyle(color: Colors.blueGrey),
+                ),
+              ),
+              SizedBox(
+                height: 5 * SizeConfig.heightMultiplier,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                child: TextFormField(
+                  decoration: new InputDecoration(
+                      labelText: "graduated",
+                      fillColor: Colors.white,
+                      border: new OutlineInputBorder(
+                          borderRadius: new BorderRadius.circular(15.0),
+                          borderSide: new BorderSide(color: Colors.blueGrey))),
+                                    style: new TextStyle(color: Colors.blueGrey),
                 ),
               ),
               SizedBox(

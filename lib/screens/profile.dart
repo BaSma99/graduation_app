@@ -1,8 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:graduation_app/components/achivement_edit.dart';
-import 'package:graduation_app/components/edit_activities.dart';
-import 'package:graduation_app/components/edit_experience.dart';
 import 'package:graduation_app/components/drawer.dart';
 import 'package:graduation_app/screens/saved.dart';
 import 'package:graduation_app/components/courses.dart';
@@ -56,7 +53,7 @@ class Profile extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 60,
+                height: 20,
               ),
               Text(
                 "Nehal Mohsen",
@@ -194,119 +191,7 @@ class Profile extends StatelessWidget {
                           Divider(
                             thickness: 3,
                           ),
-                          ListTile(
-                            trailing: Icon(Icons.file_upload),
-                            title: Text("Upload Your Cv"),
-                          ),
                         ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/experience.png'),
-                        ),
-                        title: Text("Upload your work experience"),
-                        subtitle: Text("Add your experience +"),
-                        trailing: Icon(Icons.add),
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EditExperience()));
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/edu.png'),
-                        ),
-                        title:
-                            Text("Bachelor's Degree in Software Engineering"),
-                        subtitle: Text("Monfya university"),
-                        trailing: Icon(Icons.add),
-                      ),
-                      Divider(
-                        thickness: 3,
-                      ),
-                      ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/edu.png'),
-                        ),
-                        title: Text("High School - Thanaweya Amma"),
-                        subtitle: Text("El-twheed islamic private schools"),
-                        trailing: Icon(Icons.add),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/act.png'),
-                        ),
-                        title: Text("Upload your last Activities"),
-                        subtitle: Text("Add your Activities +"),
-                        trailing: Icon(Icons.add),
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EditActivities()));
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Card(
-                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/achie.png'),
-                        ),
-                        title: Text("Upload your Achievements"),
-                        subtitle: Text("Add your Achievements +"),
-                        trailing: Icon(Icons.add),
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EditAchivement()));
-                        },
                       ),
                     ],
                   ),

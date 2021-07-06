@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:graduation_app/components/SizeConfig.dart';
 
 class Login extends StatefulWidget {
-  static const routename = 'login';
+  static const routename = 'logIn';
   Login({Key key, this.title}) : super(key: key);
 
   final String title;
@@ -29,18 +29,18 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 15 * SizeConfig.heightMultiplier,
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(25.0),
-                child: Image.asset(
-                  "assets/images/creatingprofile.png",
-                  fit: BoxFit.cover,
-                  height: 120.0,
-                  width: 120.0,
-                ),
-              ),
-              SizedBox(
-                height: 5 * SizeConfig.heightMultiplier,
-              ),
+              // ClipRRect(
+              //   borderRadius: BorderRadius.circular(25.0),
+              //   child: Image.asset(
+              //     "assets/images/creatingprofile.png",
+              //     fit: BoxFit.cover,
+              //     height: 120.0,
+              //     width: 120.0,
+              //   ),
+              // ),
+              // SizedBox(
+              //   height: 5 * SizeConfig.heightMultiplier,
+              // ),
               Text(
                 "First login",
                 style: TextStyle(
@@ -68,7 +68,7 @@ class _LoginState extends State<Login> {
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: TextFormField(
                   decoration: new InputDecoration(
-                      labelText: "Email ",
+                      labelText: "email",
                       fillColor: Colors.white,
                       border: new OutlineInputBorder(
                           borderRadius: new BorderRadius.circular(15.0),
@@ -91,7 +91,7 @@ class _LoginState extends State<Login> {
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: TextFormField(
                   decoration: new InputDecoration(
-                      labelText: "Password",
+                      labelText: "password",
                       fillColor: Colors.white,
                       border: new OutlineInputBorder(
                           borderRadius: new BorderRadius.circular(15.0),
@@ -121,26 +121,6 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 2 * SizeConfig.heightMultiplier,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    "Read more",
-                    style: TextStyle(
-                        color: Colors.blue[600],
-                        fontSize: 1.7 * SizeConfig.textMultiplier),
-                  ),
-                  SizedBox(
-                    width: 1 * SizeConfig.widthMultiplier,
-                  ),
-                  Text(
-                    "about the app",
-                    style: TextStyle(
-                        color: Colors.blueGrey,
-                        fontSize: 1.7 * SizeConfig.textMultiplier),
-                  ),
-                ],
-              )
             ],
           ),
         ),

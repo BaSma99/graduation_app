@@ -31,7 +31,7 @@ class DrawerComponent extends StatelessWidget {
                   context, MaterialPageRoute(builder: (context) => Profile()));
             },
             child: ListTile(
-              title: Text('Edit Profile'),
+              title: Text('Profile'),
               leading: Icon(Icons.edit, color: Colors.blue),
             ),
           ),

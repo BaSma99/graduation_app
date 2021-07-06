@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 
 class Training {
-  final trainingName;
-  final companyPicture;
+  final courseName;
+  final courseLocation;
   final companyName;
-  final trainingState;
-  final trainingLocation;
-  final trainingAbout;
-  final trainingRequirement;
-  final salary;
+  final skillsNeeded;
+  final coursePeriod;
   final vacancies;
+  final requirements;
+  final availableFor;
+  final about;
 
   Training(
-    this.trainingName,
-    this.companyPicture,
-    this.companyName,
-    this.trainingState,
-    this.trainingLocation,
-    this.trainingRequirement,
-    this.trainingAbout,
-    this.salary,
-    this.vacancies,
-  );
+      this.courseName,
+      this.courseLocation,
+      this.companyName,
+      this.skillsNeeded,
+      this.coursePeriod,
+      this.vacancies,
+      this.requirements,
+      this.availableFor,
+      this.about);
 }

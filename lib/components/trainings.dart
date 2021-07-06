@@ -18,15 +18,16 @@ class _TrainingState extends State<Training> {
             new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (BuildContext context, int index) {
           return SingleTraining(
-              training[index].trainingName,
-              training[index].companyPicture,
-              training[index].companyName,
-              training[index].trainingState,
-              training[index].trainingLocation,
-              training[index].trainingAbout,
-              training[index].trainingRequirement,
-              training[index].salary,
-              training[index].vacancies);
+            training[index].courseName,
+            training[index].courseLocation,
+            training[index].companyName,
+            training[index].skillsNeeded,
+            training[index].coursePeriod,
+            training[index].vacancies,
+            training[index].requirements,
+            training[index].availableFor,
+            training[index].about,
+          );
         });
   }
 }
